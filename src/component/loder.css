@@ -1,0 +1,101 @@
+/* Main container for the loader */
+.loader-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px auto;
+}
+
+/* Pulsating circle background effect */
+.pulsating-circle {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgba(0, 123, 255, 0.2);
+  animation: pulse 2s infinite;
+  z-index: 0;
+}
+
+/* Keyframe for the pulsating animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+}
+
+/* 3D rotating cube */
+.rotating-cube {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  transform-style: preserve-3d;
+  animation: rotateCube 4s infinite linear;
+  z-index: 1;
+}
+
+/* Each face of the cube */
+.cube-face {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 123, 255, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: white;
+  font-weight: bold;
+  opacity: 0.9;
+}
+
+/* Positioning the faces of the cube */
+.cube-front {
+  transform: rotateY(0deg) translateZ(30px);
+}
+
+.cube-back {
+  transform: rotateY(180deg) translateZ(30px);
+}
+
+.cube-left {
+  transform: rotateY(-90deg) translateZ(30px);
+}
+
+.cube-right {
+  transform: rotateY(90deg) translateZ(30px);
+}
+
+.cube-top {
+  transform: rotateX(90deg) translateZ(30px);
+}
+
+.cube-bottom {
+  transform: rotateX(-90deg) translateZ(30px);
+}
+
+/* Keyframes for rotating the cube */
+@keyframes rotateCube {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: rotateX(180deg) rotateY(180deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
